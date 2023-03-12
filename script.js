@@ -46,6 +46,7 @@
 // array
 const arr=[1,2,3,4]
 const arr1=['a','d','e']
+// o'ng tomonda yozilsa sochadi 
 const newArr=[...arr,...arr1]
 console.log(newArr)
 const name='jamshid'
@@ -56,8 +57,13 @@ const olma=function(a,b,c,d,e,f){
 }
 olma(...name)
 olma(...arr1)
-// object
+// yig'ish arraylarda
+// chap tomonga yozilsa yig'uvchi bo'ladi
+const [a,b,...c]=[...arr,...arr1]
+console.log(a,b,c)
 
+
+// object
 const obj1={
   name:'jamshid',
   age:22,
@@ -75,3 +81,15 @@ console.log(newObj1)
 newObj1.name='shamshod'
 console.log(obj1)
 console.log(newObj1)
+
+// yig'uvchi obectlarda 
+const {job,...newobj}={...obj1,...obj2}
+console.log(job,newobj)
+
+// function larda
+const add=function(...olma){
+  console.log(olma)
+  
+}
+add(obj2)
+add(2,2,3,4,4)
