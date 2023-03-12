@@ -24,20 +24,54 @@
 
 
 ///////////////////////// destructuring objects //////////////////////
-const cars={
-  name:'ferrari',
-  chevrolet:['nexia','lacceti','cobalt'],
-  categories:['chevrolet','kia','hyundai'],
-  friday:{
-    open:9,
-    close:18
-  }
+// const cars={
+//   name:'ferrari',
+//   chevrolet:['nexia','lacceti','cobalt'],
+//   categories:['chevrolet','kia','hyundai'],
+//   friday:{
+//     open:9,
+//     close:18
+//   }
+// }
+
+// const {chevrolet,categories}=cars
+// console.log(chevrolet,categories)
+// const {chevrolet:uzbek,categories:korean}=cars
+// console.log(uzbek,korean) 
+
+// const {friday:{open:o,close:c}}=cars
+// console.log(o,c)
+
+//////////////////////// spread operator //////////////////////
+// array
+const arr=[1,2,3,4]
+const arr1=['a','d','e']
+const newArr=[...arr,...arr1]
+console.log(newArr)
+const name='jamshid'
+console.log(...name)
+
+const olma=function(a,b,c,d,e,f){
+  console.log(`qalesan ${a}`,b,c,d,e,f)
+}
+olma(...name)
+olma(...arr1)
+// object
+
+const obj1={
+  name:'jamshid',
+  age:22,
+  job:'programmer'
+}
+const obj2={
+  car:"nexia",
+  year:2020
 }
 
-const {chevrolet,categories}=cars
-console.log(chevrolet,categories)
-const {chevrolet:uzbek,categories:korean}=cars
-console.log(uzbek,korean)
-
-const {friday:{open:o,close:c}}=cars
-console.log(o,c)
+const newObj={...obj1,...obj2}
+console.log(newObj)
+const newObj1={...obj1}
+console.log(newObj1)
+newObj1.name='shamshod'
+console.log(obj1)
+console.log(newObj1)
