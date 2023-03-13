@@ -94,19 +94,100 @@
 
 /////////////////////////// short circuiting ///////////////////
 // OR
-console.log('jamshid' || 4); // birinchi kelgan true ni oladi va to'xtaydi
-console.log(`${null ? null : 0}`);
-console.log(null || undefined); // true ni izlaydi topilmasa oxirgi false qiymatni oladi
-console.log(undefined || 0);
-console.log(null || 3);
-console.log(3 || 4);
+// console.log('jamshid' || 4); // birinchi kelgan true ni oladi va to'xtaydi
+// console.log(`${null ? null : 0}`);
+// console.log(null || undefined); // true ni izlaydi topilmasa oxirgi false qiymatni oladi
+// console.log(undefined || 0);
+// console.log(null || 3);
+// console.log(3 || 4);
 
-console.log(undefined || null || 0 || 6 || 'jam' || 3); // birinchi kelgan true ni oladi va to'xtaydi
-console.log(undefined || null || 0 || false); // true ni izlaydi topilmasa oxirgi false qiymatni oladi
+// console.log(undefined || null || 0 || 6 || 'jam' || 3); // birinchi kelgan true ni oladi va to'xtaydi
+// console.log(undefined || null || 0 || false); // true ni izlaydi topilmasa oxirgi false qiymatni oladi
 
-// AND
+// // AND
 
-console.log(2 && 7) // falseni izlaydi topolmasa oxirgi qiymatni chiqradi
-console.log(0 && null) // falseni izlaydi birinchi kelgani qaytaradi va to'xtaydi
-console.log(undefined && 7)
-console.log(2 && true && 'jmashid' && null)
+// console.log(2 && 7) // falseni izlaydi topolmasa oxirgi qiymatni chiqradi
+// console.log(0 && null) // falseni izlaydi birinchi kelgani qaytaradi va to'xtaydi
+// console.log(undefined && 7)
+// console.log(2 && true && 'jmashid' && null)
+
+// //////////////////////////// nullish operators /////////////////////////
+// // nullish operatorlariga : undefined va null kiradi (0 va " ") ni true deb oladi
+// // ?? bu nullish operatori || or ga o'xshaydi lekin 0 va " " ni true deb oladi
+// console.log(0 ?? 3)
+// console.log(undefined ?? 4)
+// console.log(false ?? 8)
+// console.log(null ?? false)
+
+////////////////// coding challenge 1 ////////////////////
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// x1
+const [players1, players2] = game.players;
+console.log(players1, players2);
+// x2
+const [gk, ...fieldPlayers] = [...players1];
+console.log(gk, fieldPlayers);
+// x3
+const [...allPlayers] = [...players1, ...players2];
+console.log(allPlayers);
+// x4
+const players1Final = [...players1, 'Tiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+// x5
+const { team1, x: draw, team2 } = { ...game.odds };
+console.log(team1, draw, team2);
+// x6
+const printGoals = function (...players) {
+  console.log(players);
+  console.log(`${players.length} goals were scored`);
+};
+printGoals(...game.scored);
+// x7
+// console.log(
+//   team1 > team2
+//     ? "Ikkinchi jamoa g'alaba qozoning ehtimoli yuqori"
+//     : "Birinchi jamoa g'alaba qozoning ehtimoli yuqori"
+// );
+team1 > team2 && console.log("Ikkinchi jamoa g'alaba qozoning ehtimoli yuqori");
+team1 < team2 && console.log("Birinchi jamoa g'alaba qozoning ehtimoli yuqori");
