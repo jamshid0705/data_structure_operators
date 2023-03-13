@@ -1,16 +1,20 @@
 'use strict';
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const weekdays = ['mon', 'tue', 'wen', 'thu', 'fri', 'stu', 'sun'];
+const obj={
+  name:'jamshid',
+  age:22,
+}
 const openingHours = {
   [weekdays[3]]: {
     open: 12,
     close: 22,
   },
-  [weekdays[4]]: {
+  [weekdays[5]]: {
     open: 11,
     close: 23,
   },
-  [weekdays[5]]: {
+  [weekdays[2]]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -22,7 +26,7 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
+  openingHours,
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
@@ -44,13 +48,51 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////////// optional chaining /////////
+// console.log(restaurant.openingHours?.fri?.open); // yo'q bo'lsa o'sha variable shu joyda to'xtadi xato bermaydi consolega
 
-////////////////////////// for of looping ////////////////////
-const menu=[...restaurant.starterMenu,...restaurant.mainMenu]
-for(const [key,value] of menu.entries()){
-  console.log(key+1,value)
-}
-console.log([...menu.entries()])
+// const days = ['mon', 'tue', 'wen', 'thu', 'fri', 'stu', 'sun'];
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open ?? 'colesed';
+//   console.log(`We are open this days ${day} at ${open}`);
+// }
+// // methods
+// console.log(restaurant.order?.(2, 3) ?? 'This method has not fined !');
+// console.log(restaurant.orders?.(2, 3) ?? 'This method has not fined !');
+
+// // arrays
+// const arr = [{ name: 'jamshid' }, ['shamshod']];
+// console.log(arr[0]?.name ?? 'it is empty');
+// console.log(arr[1]?.[0] ?? 'it is empty');
+// console.log(arr[0].name ? arr[0].name : 'it is empty');
+
+//////////////////////////// for of object ///////////////////
+// property key
+// const a=Object.keys(openingHours)
+// console.log(a)
+// for(const day of a){ // (const day of Object.keys(openingHours))
+//   console.log(day)
+// }
+// // property value
+// const b=Object.values(openingHours)
+// console.log(b)
+// for(const day of b){
+//   console.log(day)
+// }
+// for(const day of Object.values(openingHours)){
+//   console.log(day)
+// }
+// // entries
+// console.log(Object.entries(obj))
+// for(const [key,value] of Object.entries(obj)){
+//   console.log(key,value)
+// }
+// ////////////////////////// for of looping ////////////////////
+// const menu=[...restaurant.starterMenu,...restaurant.mainMenu]
+// for(const [key,value] of menu.entries()){
+//   console.log(key+1,value)
+// }
+// console.log([...menu.entries()])
 //////////////////////// destructuring arrays ////////////////////////
 // const cars={
 //   chevrolet:['nexia','lacceti','cobalt'],
@@ -242,4 +284,3 @@ console.log([...menu.entries()])
 // // );
 // team1 > team2 && console.log("Ikkinchi jamoa g'alaba qozoning ehtimoli yuqori");
 // team1 < team2 && console.log("Birinchi jamoa g'alaba qozoning ehtimoli yuqori");
-
