@@ -48,84 +48,106 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-////////////////////// coding challenge 2 /////////////
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
 
-// x1
-for (const [ind, val] of game.scored.entries()) {
-  console.log(`Goal ${ind + 1}: ${val}`);
+////////////////////// sets ///////////////////////////
+const orderSet=new Set(['olma','nok','shaftoli','shaftoli','olma','nok'])
+for(const a of orderSet){
+  console.log(a)
 }
-// x2
-const newArr = Object.values(game.odds);
-let summ = 0;
-for (const sum of newArr) {
-  summ += sum;
-}
-const avaregeOdd = summ / newArr.length;
-console.log(avaregeOdd);
-// x3
-for (const [key, value] of Object.entries(game.odds)) {
-  for (const [ind, val] of Object.entries(game)) {
-    if (key === ind) {
-      console.log(`Odd of victory ${val}:${value}`);
-    } else if (key == 'x') {
-      console.log(`Odd of draw:${value}`);
-      break;
-    }
-  }
-}
-// bonus
-let sum=0
-let scores={}
-for(const key of game.scored){
-  for(const key1 of game.scored){
-    if(key==key1){
-      sum++
-    }
-  }
-  scores[key]=sum
-  sum=0
-}
-console.log(scores)
+console.log(orderSet.size) 
+console.log(new Set().add('nok').add('gilos'))
+console.log(orderSet.has('nok'))
+console.log(orderSet.has('gilos'))
+console.log(orderSet.delete('nok'))
+orderSet.clear()
+console.log(orderSet)
+
+console.log(new Set('xatamov jamshid'))
+// examples
+const fruits=['apple','pear','pear','cherry','apple']
+const setFruits=new Set(fruits)
+console.log(setFruits)
+console.log([...setFruits])
+
+
+////////////////////// coding challenge 2 /////////////
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// // x1
+// for (const [ind, val] of game.scored.entries()) {
+//   console.log(`Goal ${ind + 1}: ${val}`);
+// }
+// // x2
+// const newArr = Object.values(game.odds);
+// let summ = 0;
+// for (const sum of newArr) {
+//   summ += sum;
+// }
+// const avaregeOdd = summ / newArr.length;
+// console.log(avaregeOdd);
+// // x3
+// for (const [key, value] of Object.entries(game.odds)) {
+//   for (const [ind, val] of Object.entries(game)) {
+//     if (key === ind) {
+//       console.log(`Odd of victory ${val}:${value}`);
+//     } else if (key == 'x') {
+//       console.log(`Odd of draw:${value}`);
+//       break;
+//     }
+//   }
+// }
+// // bonus
+// let sum=0
+// let scores={}
+// for(const key of game.scored){
+//   for(const key1 of game.scored){
+//     if(key==key1){
+//       sum++
+//     }
+//   }
+//   scores[key]=sum
+//   sum=0
+// }
+// console.log(scores)
 ///////////////////// optional chaining /////////
 // console.log(restaurant.openingHours?.fri?.open); // yo'q bo'lsa o'sha variable shu joyda to'xtadi xato bermaydi consolega
 // const days = ['mon', 'tue', 'wen', 'thu', 'fri', 'stu', 'sun'];
