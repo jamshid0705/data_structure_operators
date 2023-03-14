@@ -50,25 +50,75 @@ const restaurant = {
 };
 
 ////////////////////// sets ///////////////////////////
-const orderSet=new Set(['olma','nok','shaftoli','shaftoli','olma','nok'])
-for(const a of orderSet){
-  console.log(a)
-}
-console.log(orderSet.size) 
-console.log(new Set().add('nok').add('gilos'))
-console.log(orderSet.has('nok'))
-console.log(orderSet.has('gilos'))
-console.log(orderSet.delete('nok'))
-orderSet.clear()
-console.log(orderSet)
+// const orderSet = new Set([
+//   'olma',
+//   'nok',
+//   'shaftoli',
+//   'shaftoli',
+//   'olma',
+//   'nok',
+// ]);
+// for (const a of orderSet) {
+//   console.log(a);
+// }
+// console.log(orderSet.size);
+// console.log(new Set().add('nok').add('gilos'));
+// console.log(orderSet.has('nok'));
+// console.log(orderSet.has('gilos'));
+// console.log(orderSet.delete('nok'));
+// orderSet.clear();
+// console.log(orderSet);
 
-console.log(new Set('xatamov jamshid'))
-// examples
-const fruits=['apple','pear','pear','cherry','apple']
-const setFruits=new Set(fruits)
-console.log(setFruits)
-console.log([...setFruits])
+// console.log(new Set('xatamov jamshid'));
+// // examples
+// const fruits = ['apple', 'pear', 'pear', 'cherry', 'apple'];
+// const setFruits = new Set(fruits);
+// console.log(setFruits);
+// console.log([...setFruits]);
 
+////////////////////////// map ///////////////////////////
+console.log('---------------Map----------------');
+const rest = new Map().set('name', 'cars');
+rest
+  .set('categories', ['chevrolet', 'BWW', 'Mercedec'])
+  .set('open', 9)
+  .set('close', 18)
+  .set(true, 'We are open :D')
+  .set(false, 'We are close :(');
+console.log(rest);
+console.log(rest.get('open'));
+console.log(rest.get('categories'));
+
+console.log(rest.size);
+console.log(rest.has(true));
+console.log(rest.delete('close'));
+
+const add = [2, 3];
+rest.set(add, 'olma');
+console.log(rest);
+console.log(rest.get(add));
+
+// map ineration
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'C++'],
+  [3, 'Java'],
+  [4, 'JavaScript'],
+  [5, 'Ptyhon'],
+  ['correct', 3],
+  [true, 'Correct!'],
+  [false, 'Try again!'],
+]);
+console.log(question)
+console.log(Object.entries(openingHours))
+// console.log(weekdays.entries())
+// for(const a of weekdays.entries()){
+//   console.log(a)
+// }
+
+const hoursMap=new Map(Object.entries(openingHours))
+console.log(hoursMap)
 
 ////////////////////// coding challenge 2 /////////////
 // const game = {
