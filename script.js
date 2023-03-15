@@ -48,7 +48,38 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+////////////////////// coding challenge 3//////////////
 
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+// x1
+const events=new Set(gameEvents.values())
+console.log(events)
+// x2
+gameEvents.delete(64)
+console.log(gameEvents)
+// x3
+console.log('An event happened, on average, every 9 minutes');
+const time = [...gameEvents.keys()].pop();
+console.log(time);
+// x4
+for(const [key,value] of gameEvents){
+  console.log(
+    key <= 45 ? `[FIRST HALF] ${key}:${value}` : `[SECOND HALF] ${key}:${value}`
+  );
+}
 ////////////////////// sets ///////////////////////////
 // const orderSet = new Set([
 //   'olma',
@@ -77,62 +108,63 @@ const restaurant = {
 // console.log([...setFruits]);
 
 ////////////////////////// map ///////////////////////////
-console.log('---------------Map----------------');
-const rest = new Map().set('name', 'cars');
-rest
-  .set('categories', ['chevrolet', 'BWW', 'Mercedec'])
-  .set('open', 9)
-  .set('close', 18)
-  .set(true, 'We are open :D')
-  .set(false, 'We are close :(');
-console.log(rest);
-console.log(rest.get('open'));
-console.log(rest.get('categories'));
+// console.log('---------------Map----------------');
+// const rest = new Map().set('name', 'cars');
+// rest
+//   .set('categories', ['chevrolet', 'BWW', 'Mercedec'])
+//   .set('open', 9)
+//   .set('close', 18)
+//   .set(true, 'We are open :D')
+//   .set(false, 'We are close :(');
+// console.log(rest);
+// console.log(rest.get('open'));
+// console.log(rest.get('categories'));
 
-console.log(rest.size);
-console.log(rest.has(true));
-console.log(rest.delete('close'));
+// console.log(rest.size);
+// console.log(rest.has(true));
+// console.log(rest.delete('close'));
 
-const add = [2, 3];
-rest.set(add, 'olma');
-console.log(rest);
-console.log(rest.get(add));
+// const add = [2, 3];
+// rest.set(add, 'olma');
+// console.log(rest);
+// console.log(rest.get(add));
 
-// map ineration
-const question = new Map([
-  ['question', 'What is the best programming language in the world?'],
-  [1, 'C'],
-  [2, 'C++'],
-  [3, 'Java'],
-  [4, 'JavaScript'],
-  [5, 'Ptyhon'],
-  ['correct', 3],
-  [true, 'Correct!'],
-  [false, 'Try again!'],
-]);
-console.log(question)
-console.log(Object.entries(openingHours))
-// console.log(weekdays.entries())
-// for(const a of weekdays.entries()){
-//   console.log(a)
+// // map ineration
+// const question = new Map([
+//   ['question', 'What is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'C++'],
+//   [3, 'Java'],
+//   [4, 'JavaScript'],
+//   [5, 'Ptyhon'],
+//   ['correct', 3],
+//   [true, 'Correct!'],
+//   [false, 'Try again!'],
+// ]);
+// console.log(question)
+// console.log(Object.entries(openingHours))
+// // console.log(weekdays.entries())
+// // for(const a of weekdays.entries()){
+// //   console.log(a)
+// // }
+
+// const hoursMap=new Map(Object.entries(openingHours))
+// console.log(hoursMap)
+
+// for(const [key,value] of question){
+//   if(typeof key ==='number'){
+//     console.log(`Answer ${key}:${value}`)
+//   }
 // }
 
-const hoursMap=new Map(Object.entries(openingHours))
-console.log(hoursMap)
+// const answer=3
+// const answer2=question.get(answer===question.get('correct'))
+// console.log(answer2)
 
-for(const [key,value] of question){
-  if(typeof key ==='number'){
-    console.log(`Answer ${key}:${value}`)
-  }
-}
+// // convert map to array
+// console.log(question)
+// console.log([...question])
 
-const answer=3
-const answer2=question.get(answer===question.get('correct'))
-console.log(answer2)
-
-// convert map to array
-console.log(question)
-console.log([...question])
 ////////////////////// coding challenge 2 /////////////
 // const game = {
 //   team1: 'Bayern Munich',
