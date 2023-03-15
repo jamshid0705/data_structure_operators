@@ -48,38 +48,71 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-////////////////////// coding challenge 3//////////////
 
-const gameEvents = new Map([
-  [17, '⚽️ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽️ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽️ GOAL'],
-  [80, '⚽️ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+////////////////////// working with string ///////////////////
+const information='His name is JAMSHID!'
+const password='jam$0705'
+console.log(information[0])    
+console.log(information[9])
+console.log(information[2])
+console.log([...information])
+console.log(password[7]) 
 
-// x1
-const events=new Set(gameEvents.values())
-console.log(events)
-// x2
-gameEvents.delete(64)
-console.log(gameEvents)
-// x3
-console.log('An event happened, on average, every 9 minutes');
-const time = [...gameEvents.keys()].pop();
-console.log(time);
-// x4
-for(const [key,value] of gameEvents){
-  console.log(
-    key <= 45 ? `[FIRST HALF] ${key}:${value}` : `[SECOND HALF] ${key}:${value}`
-  );
+// slice method
+console.log(information.slice(3+1))
+console.log(information.slice(2,9))
+console.log(information.slice(-4))
+console.log(information.slice(information.length-4))
+console.log(information.indexOf('i'))
+console.log(information.lastIndexOf('i'))
+// exercise
+const text='shamsdgsacchjamnjcuiujabijambbibijamjam'
+let summ=0
+for(let i=0;i<text.length;i++){
+  if (text.slice(i, i + 1) === 'j') {
+    // console.log('1',text.slice(i, i + 1)); 
+    if (text.slice(i+1, i+2) === 'a') {
+      // console.log('2', text.slice(i+1, i + 2)); 
+      if (text.slice(i+2, i + 3) === 'm') {
+        // console.log('3', text.slice(i+2, i + 3)); 
+        summ++;
+      }
+    }
+  }
 }
+console.log(summ)
+////////////////////// coding challenge 3 //////////////////
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
+
+// // x1
+// const events=new Set(gameEvents.values())
+// console.log(events)
+// // x2
+// gameEvents.delete(64)
+// console.log(gameEvents)
+// // x3
+// console.log('An event happened, on average, every 9 minutes');
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// // x4
+// for(const [key,value] of gameEvents){
+//   console.log(
+//     key <= 45 ? `[FIRST HALF] ${key}:${value}` : `[SECOND HALF] ${key}:${value}`
+//   );
+// } 
+
 ////////////////////// sets ///////////////////////////
 // const orderSet = new Set([
 //   'olma',
