@@ -120,6 +120,19 @@ console.log(Object.entries(openingHours))
 const hoursMap=new Map(Object.entries(openingHours))
 console.log(hoursMap)
 
+for(const [key,value] of question){
+  if(typeof key ==='number'){
+    console.log(`Answer ${key}:${value}`)
+  }
+}
+
+const answer=3
+const answer2=question.get(answer===question.get('correct'))
+console.log(answer2)
+
+// convert map to array
+console.log(question)
+console.log([...question])
 ////////////////////// coding challenge 2 /////////////
 // const game = {
 //   team1: 'Bayern Munich',
