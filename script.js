@@ -50,37 +50,67 @@ const restaurant = {
 };
 
 ////////////////////// working with string ///////////////////
-const information='His name is JAMSHID!'
-const password='jam$0705'
-console.log(information[0])    
-console.log(information[9])
-console.log(information[2])
-console.log([...information])
-console.log(password[7]) 
+const information = 'His name is JAMSHID!';
+const password = 'jam$0705';
+console.log(information[0]);
+console.log(information[9]);
+console.log(information[2]);
+console.log([...information]);
+console.log(password[7]);
 
 // slice method
-console.log(information.slice(3+1))
-console.log(information.slice(2,9))
-console.log(information.slice(-4))
-console.log(information.slice(information.length-4))
-console.log(information.indexOf('i'))
-console.log(information.lastIndexOf('i'))
+console.log(information.slice(3 + 1));
+console.log(information.slice(2, 9));
+console.log(information.slice(-4));
+console.log(information.slice(information.length - 4));
+console.log(information.indexOf('i'));
+console.log(information.lastIndexOf('i'));
 // exercise
-const text='shamsdgsacchjamnjcuiujabijambbibijamjam'
-let summ=0
-for(let i=0;i<text.length;i++){
+const text = 'shamsdgsacchjamnjcuiujabijambbibijamjam';
+let summ = 0;
+for (let i = 0; i < text.length; i++) {
   if (text.slice(i, i + 1) === 'j') {
-    // console.log('1',text.slice(i, i + 1)); 
-    if (text.slice(i+1, i+2) === 'a') {
-      // console.log('2', text.slice(i+1, i + 2)); 
-      if (text.slice(i+2, i + 3) === 'm') {
-        // console.log('3', text.slice(i+2, i + 3)); 
+    // console.log('1',text.slice(i, i + 1));
+    if (text.slice(i + 1, i + 2) === 'a') {
+      // console.log('2', text.slice(i+1, i + 2));
+      if (text.slice(i + 2, i + 3) === 'm') {
+        // console.log('3', text.slice(i+2, i + 3));
         summ++;
       }
     }
   }
 }
-console.log(summ)
+console.log(summ);
+console.log('----------------------------------------------------------------');
+// toLowerCase and toUpperCase
+const myName = 'jAmSHid xATAMOv';
+const a = 'jAMshiD';
+console.log(myName.toLowerCase());
+console.log(myName.toUpperCase());
+const newA = a.toLowerCase()[0].toUpperCase() + a.toLowerCase().slice(1);
+console.log(newA);
+
+// trim - Bo'sh yoki ortiqcha joylarni olib tashlaydi stringdan
+const email = 'jamshid@gmail.com';
+const email1 = '  JAmshiD@Gmail.CoM  \n';
+const newEmail1 = email1.toLowerCase().trim();
+console.log(email === newEmail1);
+console.log(email1);
+// replace method
+let cost = '234,45#';
+console.log(cost.replace('#', '$').replace(',', '.'));
+console.log(cost);
+const text1='Hello Jamshid. How are you? His name is really Jamshid'
+console.log(text1.replace('Jamshid','Shamshod')) // bu yerda faqat birinchi topganini o'zgartiryabdi
+console.log(text1.replace(/Jamshid/g,'Shamshod'))// bu hammasini o'zgartiradi
+// includes boolean
+const inc='Hello everyone !'
+console.log(inc.includes('ever'))
+console.log(inc.includes('llo'))
+console.log(inc.includes('ellr'))
+console.log(inc.startsWith('He'))
+console.log(inc.endsWith(' !'))
+
 ////////////////////// coding challenge 3 //////////////////
 // const gameEvents = new Map([
 //   [17, '⚽️ GOAL'],
@@ -111,7 +141,7 @@ console.log(summ)
 //   console.log(
 //     key <= 45 ? `[FIRST HALF] ${key}:${value}` : `[SECOND HALF] ${key}:${value}`
 //   );
-// } 
+// }
 
 ////////////////////// sets ///////////////////////////
 // const orderSet = new Set([
