@@ -49,111 +49,130 @@ const restaurant = {
   },
 };
 
+////////////////////// coding chellenge 4 ////////////////////
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const newText = text.toLowerCase();
+  const newArr = newText.split('\n');
+  for (const [m, v] of newArr.entries()) {
+    let n = v.trim();
+    let a = n.slice(n.indexOf('_') + 1);
+    let b = n.slice(0, n.indexOf('_'));
+    console.log(
+      (b + a.replace(a[0], a[0].toUpperCase())).padEnd(20, ' ') +
+        '✅'.repeat(m + 1)
+    );
+  }
+});
+
 ////////////////////// working with string ///////////////////
-const information = 'His name is JAMSHID!';
-const password = 'jam$0705';
-console.log(information[0]);
-console.log(information[9]);
-console.log(information[2]);
-console.log([...information]);
-console.log(password[7]);
+// const information = 'His name is JAMSHID!';
+// const password = 'jam$0705';
+// console.log(information[0]);
+// console.log(information[9]);
+// console.log(information[2]);
+// console.log([...information]);
+// console.log(password[7]);
 
-// slice method
-console.log(information.slice(3 + 1));
-console.log(information.slice(2, 9));
-console.log(information.slice(-4));
-console.log(information.slice(information.length - 4));
-console.log(information.indexOf('i'));
-console.log(information.lastIndexOf('i'));
-// exercise
-const text = 'shamsdgsacchjamnjcuiujabijambbibijamjam';
-let summ = 0;
-for (let i = 0; i < text.length; i++) {
-  if (text.slice(i, i + 1) === 'j') {
-    // console.log('1',text.slice(i, i + 1));
-    if (text.slice(i + 1, i + 2) === 'a') {
-      // console.log('2', text.slice(i+1, i + 2));
-      if (text.slice(i + 2, i + 3) === 'm') {
-        // console.log('3', text.slice(i+2, i + 3));
-        summ++;
-      }
-    }
-  }
-}
-console.log(summ);
-console.log('----------------------------------------------------------------');
-// toLowerCase and toUpperCase
-const myName = 'jAmSHid xATAMOv';
-const a = 'jAMshiD';
-console.log(myName.toLowerCase());
-console.log(myName.toUpperCase());
-const newA = a.toLowerCase()[0].toUpperCase() + a.toLowerCase().slice(1);
-console.log(newA);
+// // slice method
+// console.log(information.slice(3 + 1));
+// console.log(information.slice(2, 9));
+// console.log(information.slice(-4));
+// console.log(information.slice(information.length - 4));
+// console.log(information.indexOf('i'));
+// console.log(information.lastIndexOf('i'));
+// // exercise
+// const text = 'shamsdgsacchjamnjcuiujabijambbibijamjam';
+// let summ = 0;
+// for (let i = 0; i < text.length; i++) {
+//   if (text.slice(i, i + 1) === 'j') {
+//     // console.log('1',text.slice(i, i + 1));
+//     if (text.slice(i + 1, i + 2) === 'a') {
+//       // console.log('2', text.slice(i+1, i + 2));
+//       if (text.slice(i + 2, i + 3) === 'm') {
+//         // console.log('3', text.slice(i+2, i + 3));
+//         summ++;
+//       }
+//     }
+//   }
+// }
+// console.log(summ);
+// console.log('----------------------------------------------------------------');
+// // toLowerCase and toUpperCase
+// const myName = 'jAmSHid xATAMOv';
+// const a = 'jAMshiD';
+// console.log(myName.toLowerCase());
+// console.log(myName.toUpperCase());
+// const newA = a.toLowerCase()[0].toUpperCase() + a.toLowerCase().slice(1);
+// console.log(newA);
 
-// trim - Bo'sh yoki ortiqcha joylarni olib tashlaydi stringdan
-const email = 'jamshid@gmail.com';
-const email1 = '  JAmshiD@Gmail.CoM  \n';
-const newEmail1 = email1.toLowerCase().trim();
-console.log(email === newEmail1);
-console.log(email1);
-// replace method
-let cost = '234,45#';
-console.log(cost.replace('#', '$').replace(',', '.'));
-console.log(cost);
-const text1 = 'Hello Jamshid. How are you? His name is really Jamshid';
-console.log(text1.replace('Jamshid', 'Shamshod')); // bu yerda faqat birinchi topganini o'zgartiryabdi
-console.log(text1.replace(/Jamshid/g, 'Shamshod')); // bu hammasini o'zgartiradi
-// includes boolean
-const inc = 'Hello everyone !';
-console.log(inc.includes('ever'));
-console.log(inc.includes('llo'));
-console.log(inc.includes('ellr'));
-console.log(inc.startsWith('He'));
-console.log(inc.endsWith(' !'));
-///
-const arr = ['a', 'b', 'c'].slice(1);
-console.log(arr);
-// split method array qilib beradi string ni
-console.log('It is very comfortable !'.split(' '));
-console.log('a,b,c,d,v,j,k,l,t,y'.split(','));
-// join method stringni array qilib beradi
-console.log(['It', 'is', 'fantastic', '!'].join(' '));
-console.log(['a', 'b', 'c', 'd', 'e', 'f', 'h'].join(', '));
+// // trim - Bo'sh yoki ortiqcha joylarni olib tashlaydi stringdan
+// const email = 'jamshid@gmail.com';
+// const email1 = '  JAmshiD@Gmail.CoM  \n';
+// const newEmail1 = email1.toLowerCase().trim();
+// console.log(email === newEmail1);
+// console.log(email1);
+// // replace method
+// let cost = '234,45#';
+// console.log(cost.replace('#', '$').replace(',', '.'));
+// console.log(cost);
+// const text1 = 'Hello Jamshid. How are you? His name is really Jamshid';
+// console.log(text1.replace('Jamshid', 'Shamshod')); // bu yerda faqat birinchi topganini o'zgartiryabdi
+// console.log(text1.replace(/Jamshid/g, 'Shamshod')); // bu hammasini o'zgartiradi
+// // includes boolean
+// const inc = 'Hello everyone !';
+// console.log(inc.includes('ever'));
+// console.log(inc.includes('llo'));
+// console.log(inc.includes('ellr'));
+// console.log(inc.startsWith('He'));
+// console.log(inc.endsWith(' !'));
+// ///
+// const arr = ['a', 'b', 'c'].slice(1);
+// console.log(arr);
+// // split method array qilib beradi string ni
+// console.log('It is very comfortable !'.split(' '));
+// console.log('a,b,c,d,v,j,k,l,t,y'.split(','));
+// // join method stringni array qilib beradi
+// console.log(['It', 'is', 'fantastic', '!'].join(' '));
+// console.log(['a', 'b', 'c', 'd', 'e', 'f', 'h'].join(', '));
 
-const capitalizeName = function (name) {
-  const newName = name.split(' ');
-  const newNameUpp = [];
-  for (const n of newName) {
-    // newNameUpp.push(n[0].toUpperCase()+n.slice('1'))
-    newNameUpp.push(n.replace(n[0], n[0].toUpperCase()));
-  }
-  console.log(newNameUpp.join(' '));
-};
-capitalizeName('jamshid is programmer !');
-capitalizeName('jamshid xatamov');
+// const capitalizeName = function (name) {
+//   const newName = name.split(' ');
+//   const newNameUpp = [];
+//   for (const n of newName) {
+//     // newNameUpp.push(n[0].toUpperCase()+n.slice('1'))
+//     newNameUpp.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(newNameUpp.join(' '));
+// };
+// capitalizeName('jamshid is programmer !');
+// capitalizeName('jamshid xatamov');
 
-// padStart and padEnd mathods
-const b = 'jamshid';
-const b1 = 'xatamov jamshid';
-console.log(b.padStart(34, '*'));
-console.log(b1.padEnd(20, '*'));
+// // padStart and padEnd mathods
+// const b = 'jamshid';
+// const b1 = 'xatamov jamshid';
+// console.log(b.padStart(34, '*'));
+// console.log(b1.padEnd(40, '*'));
 
-const creditCard = function (name) {
-  const newName = String(name);
-  const card = newName.slice(-4);
-  return card.padStart(newName.length, '*');
-};
-console.log(creditCard(2637564356450));
-console.log(creditCard(24646121864945843));
-console.log(creditCard('21435647078576856'));
+// const creditCard = function (name) {
+//   const newName = String(name);
+//   const card = newName.slice(-4);
+//   return card.padStart(newName.length, '*');
+// };
+// console.log(creditCard(2637564356450));
+// console.log(creditCard(24646121864945843));
+// console.log(creditCard('21435647078576856'));
 
-// repeat
-console.log('Salom'.repeat(3));
+// // repeat
+// console.log('Salom'.repeat(3));
 
-const planes = function (n) {
-  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
-};
-planes(4)
+// const planes = function (n) {
+//   console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+// };
+// planes(4)
 // console.log('!'.toUpperCase())
 ////////////////////// coding challenge 3 //////////////////
 // const gameEvents = new Map([
