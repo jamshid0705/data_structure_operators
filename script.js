@@ -100,20 +100,64 @@ console.log(email1);
 let cost = '234,45#';
 console.log(cost.replace('#', '$').replace(',', '.'));
 console.log(cost);
-const text1='Hello Jamshid. How are you? His name is really Jamshid'
-console.log(text1.replace('Jamshid','Shamshod')) // bu yerda faqat birinchi topganini o'zgartiryabdi
-console.log(text1.replace(/Jamshid/g,'Shamshod'))// bu hammasini o'zgartiradi
+const text1 = 'Hello Jamshid. How are you? His name is really Jamshid';
+console.log(text1.replace('Jamshid', 'Shamshod')); // bu yerda faqat birinchi topganini o'zgartiryabdi
+console.log(text1.replace(/Jamshid/g, 'Shamshod')); // bu hammasini o'zgartiradi
 // includes boolean
-const inc='Hello everyone !'
-console.log(inc.includes('ever'))
-console.log(inc.includes('llo'))
-console.log(inc.includes('ellr'))
-console.log(inc.startsWith('He'))
-console.log(inc.endsWith(' !'))
+const inc = 'Hello everyone !';
+console.log(inc.includes('ever'));
+console.log(inc.includes('llo'));
+console.log(inc.includes('ellr'));
+console.log(inc.startsWith('He'));
+console.log(inc.endsWith(' !'));
+///
+const arr = ['a', 'b', 'c'].slice(1);
+console.log(arr);
+// split method array qilib beradi string ni
+console.log('It is very comfortable !'.split(' '));
+console.log('a,b,c,d,v,j,k,l,t,y'.split(','));
+// join method stringni array qilib beradi
+console.log(['It', 'is', 'fantastic', '!'].join(' '));
+console.log(['a', 'b', 'c', 'd', 'e', 'f', 'h'].join(', '));
 
+const capitalizeName = function (name) {
+  const newName = name.split(' ');
+  const newNameUpp = [];
+  for (const n of newName) {
+    // newNameUpp.push(n[0].toUpperCase()+n.slice('1'))
+    newNameUpp.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(newNameUpp.join(' '));
+};
+capitalizeName('jamshid is programmer !');
+capitalizeName('jamshid xatamov');
+
+// padStart and padEnd mathods
+const b = 'jamshid';
+const b1 = 'xatamov jamshid';
+console.log(b.padStart(34, '*'));
+console.log(b1.padEnd(20, '*'));
+
+const creditCard = function (name) {
+  const newName = String(name);
+  const card = newName.slice(-4);
+  return card.padStart(newName.length, '*');
+};
+console.log(creditCard(2637564356450));
+console.log(creditCard(24646121864945843));
+console.log(creditCard('21435647078576856'));
+
+// repeat
+console.log('Salom'.repeat(3));
+
+const planes = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+planes(4)
+// console.log('!'.toUpperCase())
 ////////////////////// coding challenge 3 //////////////////
 // const gameEvents = new Map([
-//   [17, '⚽️ GOAL'],
+//   [17, '⚽️ GOAL']
 //   [36, '🔁 Substitution'],
 //   [47, '⚽️ GOAL'],
 //   [61, '🔁 Substitution'],
